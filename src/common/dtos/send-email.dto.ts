@@ -55,6 +55,9 @@ export class SmtpConfig {
   @IsOptional()
   @IsBoolean()
   secure: boolean;
+  @IsObject()
+  @ValidateNested()
+  @Type(() => SmtpAuth)
   auth: SmtpAuth;
 }
 

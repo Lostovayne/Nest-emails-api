@@ -11,12 +11,12 @@ Content-Type: application/json
     "html": "<h1> Hola Deus </h1>"
   },
   "smtpConfig":{
-    "host":"",
-    "port":"",
+    "host":"sandbox.smtp.mailtrap.io",
+    "port":2525,
     "secure": false,
     "auth":{
-      "user":"",
-      "pass":""
+      "user":"01c99287e41e8f",
+      "pass":"48b2c7d60180bc"
     }
   }
 }

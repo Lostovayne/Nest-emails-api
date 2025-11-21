@@ -2,7 +2,7 @@ import { Process, Processor } from '@nestjs/bull';
 import type { Job } from 'bull';
 import sanitizeHtml from 'sanitize-html';
 import { SendEmailDto } from 'src/common/dtos';
-import { createTransport } from 'src/config/nodemailer';
+import { createTransporter } from 'src/config/nodemailer';
 
 @Processor('email-queue')
 export class EmailProcessor {
@@ -12,7 +12,7 @@ export class EmailProcessor {
 
     // Sanitize HTML content to prevent XSS attacks
     const sanitizedHtml = sanitizeHtml(mailOptions.html);
-    const transporter = createTransport(smtpConfig);
+    const transporter = createTransporter(smtpConfig);
 
     try {
       await transporter.sendMail({
